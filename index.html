@@ -57,9 +57,9 @@
   "sameAs": [
     "https://www.instagram.com/the36innovativedelegates",
     "https://www.youtube.com/the36innovativedelegates",
-    "https://www.facebook.com/TheThirtySixInnovativedelegates",
+    "https://www.facebook.com/profile.php?id=61589953079988",
     "https://www.linkedin.com/company/thethirtysix-innovative-delegates",
-    "https://x.com/the36innovativedelegates"
+    "https://x.com/the36id"
   ]
 }
 </script>
@@ -119,7 +119,7 @@
   },
   "sameAs": [
     "https://www.instagram.com/the36innovativedelegates",
-    "https://www.facebook.com/TheThirtySixInnovativedelegates",
+    "https://www.facebook.com/profile.php?id=61589953079988",
     "https://www.linkedin.com/company/thethirtysix-innovative-delegates"
   ]
 }
@@ -682,37 +682,40 @@ section{padding:100px 5%}
 }
 .form-title{
   font-family:'Syne',sans-serif;font-weight:700;
-  font-size:1.2rem;margin-bottom:6px;
+  font-size:1.6rem;margin-bottom:8px;color:var(--white);
 }
-.form-sub{font-size:.83rem;color:var(--muted);margin-bottom:28px}
-.form-group{margin-bottom:18px}
+.form-sub{font-size:1rem;color:#b0bec5;margin-bottom:28px;line-height:1.6}
+.form-group{margin-bottom:22px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 label{
   display:block;
   font-family:'Space Mono',monospace;
-  font-size:.65rem;color:var(--blue);
-  letter-spacing:.08em;margin-bottom:6px;
+  font-size:.78rem;color:#7dd3fc;
+  letter-spacing:.08em;margin-bottom:8px;font-weight:600;
 }
 input,select,textarea{
   width:100%;
-  background:rgba(255,255,255,0.04);
-  border:1px solid var(--border);
-  color:var(--white);
-  padding:12px 16px;border-radius:6px;
-  font-family:'Outfit',sans-serif;font-size:.88rem;
-  transition:border-color .2s;outline:none;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(125,211,252,0.3);
+  color:#f0f8ff;
+  padding:14px 18px;border-radius:8px;
+  font-family:'Outfit',sans-serif;font-size:1rem;
+  transition:border-color .2s,background .2s;outline:none;
 }
+input::placeholder,textarea::placeholder{color:rgba(176,190,197,0.55);font-size:.95rem}
 input:focus,select:focus,textarea:focus{
   border-color:var(--blue);
-  box-shadow:0 0 0 3px rgba(14,165,233,0.1);
+  background:rgba(14,165,233,0.08);
+  box-shadow:0 0 0 3px rgba(14,165,233,0.15);
 }
-select option{background:var(--navy)}
-textarea{resize:vertical;min-height:100px}
+select{color:#f0f8ff}
+select option{background:var(--navy);color:#f0f8ff}
+textarea{resize:vertical;min-height:110px;font-size:.97rem}
 .form-submit{
   width:100%;
   background:linear-gradient(135deg,var(--blue),#0284c7);
-  color:#fff;font-weight:700;font-size:.88rem;
-  padding:14px;border-radius:6px;border:none;
+  color:#fff;font-weight:700;font-size:1.05rem;
+  padding:16px;border-radius:8px;border:none;
   cursor:pointer;letter-spacing:.06em;
   transition:all .2s;margin-top:8px;
   box-shadow:0 0 30px rgba(14,165,233,0.3);
@@ -1584,16 +1587,16 @@ footer{
             📸 Instagram: @the36innovativedelegates
           </a><br>
           <a href="https://www.youtube.com/the36innovativedelegates" rel="noopener" target="_blank" aria-label="The 36 Innovative Delegates on YouTube" style="color:var(--white);text-decoration:none">
-            ▶️ YouTube: the36innovativedelegates@gmail.com
+            ▶️ YouTube: the36innovativedelegates
           </a><br>
-          <a href="https://www.facebook.com/TheThirtySixInnovativedelegates" rel="noopener" target="_blank" aria-label="TheThirtySix Innovativedelegates on Facebook" style="color:var(--white);text-decoration:none">
-            📘 Facebook: TheThirtySix Innovativedelegates
+          <a href="https://www.facebook.com/profile.php?id=61589953079988" rel="noopener" target="_blank" aria-label="Thethirtysix Innovativedelegates on Facebook" style="color:var(--white);text-decoration:none">
+            📘 Facebook: Thethirtysix Innovativedelegates
           </a><br>
           <a href="https://www.linkedin.com/company/thethirtysix-innovative-delegates" rel="noopener" target="_blank" aria-label="Thethirtysix Innovative Delegates on LinkedIn" style="color:var(--white);text-decoration:none">
             💼 LinkedIn: Thethirtysix Innovative Delegates
           </a><br>
-          <a href="https://x.com/the36innovativedelegates" rel="noopener" target="_blank" aria-label="The 36 Innovative Delegates on X" style="color:var(--white);text-decoration:none">
-            𝕏 X (Twitter): @the36innovativedelegates
+          <a href="https://x.com/the36id" rel="noopener" target="_blank" aria-label="The 36 Innovative Delegates on X" style="color:var(--white);text-decoration:none">
+            𝕏 X (Twitter): @the36id
           </a>
         </p>
       </div>
@@ -1847,9 +1850,8 @@ function submitForm() {
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
-  btn.textContent = 'SUBMITTING...';
+  btn.textContent = '⏳ SUBMITTING...';
 
-  // Collect data
   const data = {
     timestamp: new Date().toISOString(),
     studentName: name,
@@ -1863,27 +1865,54 @@ function submitForm() {
     concerns: document.getElementById('concerns').value,
   };
 
-  // Store locally as fallback
-  const existing = JSON.parse(localStorage.getItem('the36_leads') || '[]');
-  existing.push(data);
-  localStorage.setItem('the36_leads', JSON.stringify(existing));
+  // ── 1. Save locally as failsafe ──
+  try {
+    const existing = JSON.parse(localStorage.getItem('the36_leads') || '[]');
+    existing.push(data);
+    localStorage.setItem('the36_leads', JSON.stringify(existing));
+  } catch(e) {}
 
-  // Try to submit to Google Apps Script (if URL configured)
-  const GOOGLE_SCRIPT_URL = ''; // Paste your Google Apps Script URL here
+  // ── 2. Google Apps Script backend (paste your deployed URL below) ──
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
 
-  if(GOOGLE_SCRIPT_URL) {
+  // ── 3. Web3Forms fallback (free, no auth needed — replace key if desired) ──
+  const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+
+  const QUALIFIER_URL = 'https://smallvilleinfotech-art.github.io/the36id_qualifiers-test/';
+
+  function redirectToQualifier() {
+    btn.textContent = '✅ REDIRECTING TO QUALIFIER...';
+    // Brief moment so user sees the confirmation, then redirect
+    setTimeout(() => {
+      window.location.href = QUALIFIER_URL;
+    }, 1800);
+  }
+
+  // Try Google Apps Script first
+  const hasGoogleScript = GOOGLE_SCRIPT_URL.indexOf('YOUR_SCRIPT_ID') === -1;
+  const hasWeb3Forms    = WEB3FORMS_KEY.indexOf('YOUR_') === -1;
+
+  if (hasGoogleScript) {
     fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
-    }).catch(() => {});
+    })
+    .then(() => redirectToQualifier())
+    .catch(() => redirectToQualifier()); // still redirect even if fetch fails
+  } else if (hasWeb3Forms) {
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, ...data })
+    })
+    .then(() => redirectToQualifier())
+    .catch(() => redirectToQualifier());
+  } else {
+    // No backend configured yet — still redirect (data saved locally)
+    redirectToQualifier();
   }
-
-  setTimeout(() => {
-    document.getElementById('formArea').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }, 1000);
 }
 </script>
 </body>
