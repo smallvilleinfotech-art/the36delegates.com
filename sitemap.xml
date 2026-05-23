@@ -1,64 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="
-          http://www.sitemaps.org/schemas/sitemap/0.9
-          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
-          http://www.google.com/schemas/sitemap-image/1.1
-          http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
-
-  <!-- ══ MAIN PAGE ══ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://smallvilleinfotech-art.github.io/the36delegates.com/</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://smallvilleinfotech-art.github.io/the36delegates.com/og-image.jpg</image:loc>
-      <image:title>The 36 Innovative Delegates — Abuja AI Program 2026</image:title>
-      <image:caption>Nigeria's premier AI Camp and Innovation Discovery Program convened by Stephen Olabamiji. June 15–21, 2026. FCT Abuja.</image:caption>
-    </image:image>
   </url>
-
-  <!-- ══ ABOUT SECTION ══ -->
-  <url>
-    <loc>https://smallvilleinfotech-art.github.io/the36delegates.com/#about</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ══ PROGRAMME TRACK SECTION ══ -->
-  <url>
-    <loc>https://smallvilleinfotech-art.github.io/the36delegates.com/#program</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ══ SCHOOL SLOTS SECTION ══ -->
-  <url>
-    <loc>https://smallvilleinfotech-art.github.io/the36delegates.com/#slots</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ══ CONVENER — STEPHEN OLABAMIJI ══ -->
-  <url>
-    <loc>https://smallvilleinfotech-art.github.io/the36delegates.com/#stephen</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ══ APPLY SECTION ══ -->
-  <url>
-    <loc>https://smallvilleinfotech-art.github.io/the36delegates.com/#apply</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
 </urlset>
